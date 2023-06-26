@@ -1,0 +1,115 @@
+// _variables.scss
+
+// Colors
+$primaryColor: #007bff;
+$secondaryColor: #6c757d;
+$accentColor: #ff5722;
+
+// Typography
+$primaryFontFamily: 'Arial', sans-serif;
+$headingFontFamily: 'Roboto', sans-serif;
+$baseFontSize: 16px;
+
+// Spacing
+$spacingUnit: 8px;
+$marginHorizontal: $spacingUnit * 2;
+$paddingVertical: $spacingUnit;
+
+// Breakpoints
+$breakpointSmall: 576px;
+$breakpointMedium: 768px;
+$breakpointLarge: 992px;
+
+// Z-Index
+$zIndexDropdown: 100;
+$zIndexModal: 200;
+$zIndexTooltip: 300;
+
+// Transitions
+$transitionDuration: 0.3s;
+$transitionTimingFunction: ease-in-out;
+// _variables.scss
+
+// Breakpoints
+$breakpointSmall: 576px;
+$breakpointMedium: 768px;
+$breakpointLarge: 992px;
+
+// Grid
+$gridColumns: 12;
+$gridGutter: 16px;
+
+// Button
+$buttonPadding: 12px 24px;
+$buttonBorderRadius: 4px;
+
+// Form
+$inputHeight: 40px;
+$inputBorderRadius: 4px;
+
+// Media queries
+$mediaQuerySmall: "(max-width: 576px)";
+$mediaQueryMedium: "(min-width: 577px) and (max-width: 992px)";
+$mediaQueryLarge: "(min-width: 993px)";
+
+// Icons
+$iconSize: 24px;
+$iconColor: #333;
+
+// Shadows
+$boxShadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Animation
+$animationDuration: 0.3s;
+$animationTimingFunction: ease-in-out;
+
+// Sizes
+$containerWidth: 1200px;
+$sidebarWidth: 300px;
+
+
+
+:root {
+    --header-height: 3.5rem; /*56px*/
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --hue: 152;
+    --first-color: hsl(var(--hue), 24%, 32%);
+    --first-color-alt: hsl(var(--hue), 24%, 28%);
+    --first-color-light: hsl(var(--hue), 24%, 66%);
+    --first-color-lighten: hsl(var(--hue), 24%, 92%);
+    --title-color: hsl(var(--hue), 4%, 15%);
+    --text-color: hsl(var(--hue), 4%, 35%);
+    --text-color-light: hsl(var(--hue), 4%, 55%);
+    --body-color: hsl(var(--hue), 0%, 100%);
+    --container-color: #FFF;
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  
+    /*========== Margenes Bottom ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }

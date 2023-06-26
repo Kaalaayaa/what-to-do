@@ -1,27 +1,28 @@
 import { useState, useEffect } from 'react'
-import './App.scss'
+import './styles/globalStyles.scss';
 import sanityClient from "./client"
+import { Event } from './types/interfaces';
 
-function App() {
-  const [posts, setPosts] = useState(null)
+const App: React.FC = () => {
+  const [events, setEvents] = useState<Event[]>([])
 
   useEffect(() => {
 sanityClient
-.fetch(
-  `*[_type == "post"]{
-    title
-  }`
+.fetch<Event[]>(
+  `
+      *[_type == "event" && startDate > now() || _type == "event" && startDate < now()  ] | order(startDate desc)
+    `
 )
-.then((data) => setPosts(data))
+.then((data) => setEvents(data))
 .catch(console.error)
-  })
+  }, [])
 
+  console.log(events)
 
-  console.log(posts)
   return (
     <>
-      <h1>Posts</h1>
-      <p>{posts && posts.map((post, index) => <div>{post.title}</div>)}</p>
+      <h1>Events</h1>
+      <div>{events && events.map((event) => <div key={event.title}>{event.title}</div>)}</div>
     </>
   )
 }

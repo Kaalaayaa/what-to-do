@@ -1,0 +1,62 @@
+@import 'variables';
+
+// _mixins.scss
+
+@mixin centerElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin textTruncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin boxShadow($xOffset, $yOffset, $blurRadius, $color) {
+  box-shadow: $xOffset $yOffset $blurRadius $color;
+}
+
+@mixin mediaQuery($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hoverTransition($property, $duration: 0.3s, $timing-function: ease-in-out) {
+  transition: $property $duration $timing-function;
+
+  &:hover {
+    @content;
+  }
+}
+
+/* SCSS */
+@mixin breakpoint($point) {
+  @if $point == large {
+     @media only screen and (min-width: 1366px) {
+        @content;
+     }
+  } 
+  @else if $point == desktop {
+     @media only screen and (min-width: 1024px) {
+        @content;
+     }
+  } 
+  @else if $point == tablet {
+     @media only screen and (min-width: 600px) {
+        @content;
+     }
+  }
+}
+//USAGE === 
+// /* SCSS */
+// @include breakpoint(large) {
+//   div {
+//      font-size: 2rem;
+//      line-height: 1.4;
+//   }
+// }
+
+// ... add more mixins as needed
